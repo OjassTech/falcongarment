@@ -1,547 +1,1047 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <!-- bootstrap meta and others  -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css">
-
-
-    <!-- Basic Meta -->
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home | Falcon Garment Industry</title>
-
-    <!-- SEO Meta -->
-    <meta name="description"
-        content="Century Media360 is a global creative marketing agency offering strategy, branding, digital solutions, and growth-driven campaigns.">
-    <meta name="keywords"
-        content="Century Media360, marketing agency, creative agency, digital marketing, branding, global strategy, Canada, SEO, design, social media">
-    <meta name="author" content="Century Media360">
-
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="About Us | Century Media360">
-    <meta property="og:description"
-        content="Learn about Century Media360 — a full-service marketing agency blending creativity, strategy, and results.">
-    <meta property="og:image" content="https://www.centurymedia360.com/assets/images/og-image.jpg">
-    <meta property="og:url" content="https://www.centurymedia360.com/about">
-    <meta property="og:site_name" content="Century Media360">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="About Us | Century Media360">
-    <meta name="twitter:description"
-        content="Century Media360 is your strategic partner in marketing success, with a global reach and creative approach.">
-    <meta name="twitter:image" content="https://www.centurymedia360.com/assets/images/twitter-card.jpg">
-
-    <!-- Favicon -->
-    <link rel="icon" href="/assets/favicon.ico.png" type="image/x-icon">
-
-</head>
-
-<style>
-    .contact-card {
-        opacity: 0;
-        transform: translateY(100px);
-        transition: opacity 1s ease-out, transform 1s ease-out;
-        margin-top: 80px;
-    }
-
-    .active {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    .map {
-        opacity: 0;
-        transform: translateX(-100px);
-        transition: opacity 1s ease-out, transform 1s ease-out;
-        margin-top: 80px;
-    }
-
-    .active {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    .faqs {
-        opacity: 0;
-        transform: translateX(100px);
-        transition: opacity 1s ease-out, transform 1s ease-out;
-        margin-top: 80px;
-    }
-
-    .active {
-        opacity: 1;
-        transform: translateX(0);
-    }
-
-    .glass-card {
-        position: relative;
-        border-radius: 10px;
-        overflow: hidden;
-        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-        height: 320px;
-    }
-
-    .glass-card img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .glass-info {
-        position: absolute;
-        bottom: 48px;
-        left: 0;
-        width: 100%;
-        padding: 15px;
-        background: rgba(255, 255, 255, 0.2);
-        backdrop-filter: blur(8px);
-        color: white;
-    }
-
-    .glass-info h3 {
-        font-size: 1.1rem;
-        font-weight: bold;
-        margin: 0 0 5px;
-    }
-
-    .glass-info p {
-        margin: 0;
-        font-size: 0.9rem;
-    }
-
-    .bottom-link {
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        background: white;
-        padding: 12px 15px;
-        font-weight: bold;
-        color: red;
-        font-size: 1rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        cursor: pointer;
-    }
-
-    .bottom-link span {
-        font-size: 1.2rem;
-    }
-
-
-
-
-    /* Make the accordion arrow white */
-    .accordion-button::after {
-        filter: brightness(0) invert(1);
-        /* turn icon white */
-        font-weight: 900;
-        transform: scale(1.4);
-    }
-
-    .accordion-button:not(.collapsed)::after {
-        filter: brightness(0) invert(1);
-        /* keep icon white when expanded */
-    }
-
-    .accordion-body {
-        border: 3px solid #cc2225 !important;
-        border-radius: 0 0 0.375rem 0.375rem;
-        color: #cc2225 !important;
-        font-size: 20px;
-    }
-</style>
-
-
-<body>
-
-    <!-- Back to Top Button -->
-    <button id="backToTopBtn" class="btn btn-danger position-fixed bottom-0 end-0 m-5 d-none">
-        ↑ Back To Top
-    </button>
-
-    <!-- header  -->
-    <div id="header"></div>
-
-    <div id="carouselExample" class="carousel slide">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img src="assets/contact_carousel.png" class="d-block w-100" alt="contact us carousel"
-                    style="border-bottom: 5px solid #cc2225;">
-            </div>
-        </div>
-    </div>
-
-    <!-- small card sectrion  -->
-    <section class="contact-card" style="margin-top: 60px;">
-        <div class="container">
-            <div class="row g-5 justify-content-center">
-
-                <!-- Card 1 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="glass-card">
-                        <img src="assets/contact feature 1.png" alt="Hospitality Uniforms">
-                        <div class="glass-info">
-                            <h3>Hospitality Uniforms</h3>
-                            <p>Discover premium-quality garments designed for hotel and restaurant staff.</p>
-                        </div>
-                        <div class="bottom-link">
-                            Browse Hospitality Wear <span>→</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 2 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="glass-card">
-                        <img src="assets/contact feature 2.png" alt="Corporate Orders">
-                        <div class="glass-info">
-                            <h3>Corporate Orders</h3>
-                            <p>Explore custom uniforms and tailored packages for your corporate workforce.</p>
-                        </div>
-                        <div class="bottom-link">
-                            View Corporate Solutions <span>→</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Card 3 -->
-                <div class="col-lg-4 col-md-6">
-                    <div class="glass-card">
-                        <img src="assets/contact feature 3.png" alt="School Uniforms">
-                        <div class="glass-info">
-                            <h3>School Uniforms</h3>
-                            <p>Comfortable and durable uniforms crafted for everyday school life.</p>
-                        </div>
-                        <div class="bottom-link">
-                            Shop School Collection <span>→</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- map section  -->
-    <section class="map" style="margin-top: 60px;">
-        <div class="container">
-            <div class="row">
-                <!-- Left Column -->
-                <div class="col-md-4">
-                    <!-- Media Enquiries Card -->
-                    <div class="card shadow-sm border-0 rounded-3 mb-4 bg-white">
-                        <div class="card-header bg-danger text-white fw-bold fs-5 py-2 rounded-top">
-                            Media enquiries
-                        </div>
-                        <div class="card-body">
-                            <p><i class="fas fa-clock text-danger me-2"></i><strong>Office Hours</strong><br />
-                                Monday–Friday 8:00 am - 6:00 pm<br />
-                                Saturday–Sunday 10:00 am - 3:00 pm
-                            </p>
-                            <p><i class="fas fa-phone-alt text-danger me-2"></i><strong>Call Hours</strong><br />
-                                6:00 am - 10:00 pm
-                            </p>
-                            <p><i class="fas fa-map-marker-alt text-danger me-2"></i><strong>Location</strong><br />
-                                Location is Kuwait.
-                            </p>
-                            <p><i class="fas fa-envelope text-danger me-2"></i><strong>Email</strong><br />
-                                SmartCare@gmail.com
-                            </p>
-                        </div>
-                    </div>
-
-                    <!-- Social Media Card -->
-                    <div class="card shadow-sm border-0 rounded-3 bg-white">
-                        <div class="card-header bg-danger text-white fw-bold fs-5 py-2 rounded-top">
-                            Social Media
-                        </div>
-                        <div class="card-body text-center">
-                            <a href="#" class="text-danger fs-4 mx-2"><i class="fab fa-facebook"></i></a>
-                            <a href="#" class="text-danger fs-4 mx-2"><svg xmlns="http://www.w3.org/2000/svg" width="21"
-                                    height="21" viewBox="0 0 16 16">
-                                    <path fill="#dc3545"
-                                        d="M9.294 6.928L14.357 1h-1.2L8.762 6.147L5.25 1H1.2l5.31 7.784L1.2 15h1.2l4.642-5.436L10.751 15h4.05zM7.651 8.852l-.538-.775L2.832 1.91h1.843l3.454 4.977l.538.775l4.491 6.47h-1.843z" />
-                                </svg></a>
-                            <a href="#" class="text-danger fs-4 mx-2"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Column: Map -->
-                <div class="col-md-8 mt-4 mt-md-0">
-                    <div class="border border-4 border-danger rounded-3 overflow-hidden" style="height: 505px;">
-                        <iframe class="w-100 h-100 border-0"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3486.8970041299294!2d48.08912097602857!3d29.07918836365654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf064285b01eff%3A0x542f37375674797c!2sSGS%20Kuwait%20W.L.L.!5e0!3m2!1sen!2sin!4v1749818322465!5m2!1sen!2sin"
-                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQs section  -->
-    <section class="faqs" style="margin-top: 60px;">
-        <div class="container my-5 py-3 px-2 px-md-5">
-            <!-- Header -->
-            <div class="text-center mb-4">
-                <div class="d-inline-block bg-white fw-bold fs-3 px-4 py-2 rounded-4 shadow" style="color: #cc2225;">
-                    FAQs
-                </div>
-            </div>
-
-            <!-- Description -->
-            <p class="text-center mb-5 px-md-5" style="color: #cc2225;">
-                Falcon Garments is a leading uniform manufacturer based in Tirupur, India, specializing in custom-made
-                corporate, school, industrial, and hospitality uniforms. With advanced facilities and over 20 years of
-                experience, we deliver high-quality, bulk garment solutions tailored to your brand’s needs.
-            </p>
-
-            <!-- Accordion -->
-            <div class="accordion mx-auto" id="faqAccordion" style="max-width: 900px;">
-
-                <!-- FAQ 1 -->
-                <div class="accordion-item border-0 mb-2 shadow-sm rounded-3">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed text-white fw-semibold rounded-top"
-                            style="background-color: #cc2225; font-size: 20px;" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
-                            What types of uniform garments does your company manufacture?
-                        </button>
-                    </h2>
-                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body rounded-bottom text-primary">
-                            We specialize in tailored uniforms including corporate wear (shirts, trousers, blazers),
-                            industrial/workwear, hospitality uniforms, school uniforms, and sportswear. We serve both
-                            woven
-                            and knitted garment needs.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ 2 -->
-                <div class="accordion-item border-0 mb-2 shadow-sm rounded-3">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed text-white fw-semibold rounded-top"
-                            style="background-color: #cc2225; font-size: 20px;" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
-                            Do you offer custom sizing and made-to-measure uniforms?
-                        </button>
-                    </h2>
-                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body rounded-bottom text-primary">
-                            Absolutely. Our team provides fully custom sizing services—customers can provide
-                            measurements,
-                            and our skilled tailors will craft garments to fit perfectly.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ 3 -->
-                <div class="accordion-item border-0 mb-2 shadow-sm rounded-3">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed text-white fw-semibold rounded-top"
-                            style="background-color: #cc2225; font-size: 20px;" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq3">
-                            What is your minimum order quantity (MOQ) for uniform production?
-                        </button>
-                    </h2>
-                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body rounded-bottom text-primary">
-                            We typically accept MOQs starting from 500 pieces per design/color. However, the MOQ may
-                            vary
-                            depending on fabric choice and complexity—reach out for a customized quote.
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ 4 -->
-                <div class="accordion-item border-0 mb-2 shadow-sm rounded-3">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed text-white fw-semibold rounded-top"
-                            style="background-color: #cc2225; font-size: 20px;" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq4">
-                            What is your manufacturing capacity per month?
-                        </button>
-                    </h2>
-                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body rounded-bottom text-primary">
-                            Our production setup supports:
-                            <ul>
-                                <li>Up to 100,000 pieces per month for standard designs</li>
-                                <li>Scalable capacity for larger orders with advanced planning</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ 5 -->
-                <div class="accordion-item border-0 mb-2 shadow-sm rounded-3">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed text-white fw-semibold rounded-top"
-                            style="background-color: #cc2225; font-size: 20px;" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq5">
-                            Where are your manufacturing facilities located?
-                        </button>
-                    </h2>
-                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body rounded-bottom text-primary">
-                            We operate from Tirupur, Southern India, managing three production units equipped with 200+
-                            sewing machines and a team of experienced professionals .
-                        </div>
-                    </div>
-                </div>
-
-                <!-- FAQ 6 -->
-                <div class="accordion-item border-0 mb-2 shadow-sm rounded-3">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed text-white fw-semibold rounded-top"
-                            style="background-color: #cc2225; font-size: 20px;" type="button" data-bs-toggle="collapse"
-                            data-bs-target="#faq6">
-                            What fabrics and materials can you source?
-                        </button>
-                    </h2>
-                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body rounded-bottom text-primary">
-                            We source both knitted and woven fabrics from South‑East Asia and produce in-house. We
-                            handle a
-                            wide variety: cotton, poly‑cotton blends, technical fabrics, and specialized performance
-                            textiles.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- form section  -->
-    <section class="form-section my-5" style="background-color: white;">
-        <div class="container py-5 d-flex justify-content-center">
-            <form class="p-4 rounded shadow" style="background-color: #f2f2ec; max-width: 900px; width: 100%;">
-                <div class="row g-3 mb-2">
-                    <div class="col-md-6">
-                        <input type="text" class="form-control rounded" placeholder="Full Name" required>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="text" class="form-control rounded" placeholder="Company" required>
-                    </div>
-                </div>
-
-                <div class="row g-3 mb-2">
-                    <div class="col-md-6">
-                        <input type="email" class="form-control rounded" placeholder="Email" required>
-                    </div>
-                    <div class="col-md-6">
-                        <input type="tel" class="form-control rounded" placeholder="Mobile No." required>
-                    </div>
-                </div>
-
-                <div class="mb-2">
-                    <select class="form-select rounded" required>
-                        <option selected disabled>Products</option>
-                        <option value="1">Business Suit</option>
-                        <option value="2">Doctor Coat</option>
-                        <option value="3">School Uniform</option>
-                    </select>
-                </div>
-
-                <div class="mb-2">
-                    <input type="number" class="form-control rounded" placeholder="Order Quantity" required>
-                </div>
-
-                <div class="mb-3">
-                    <textarea class="form-control" placeholder="Your Message" rows="4"
-                        style="border-radius: 12px;"></textarea>
-                </div>
-
-                <div class="text-start">
-                    <button type="submit" class="btn-cmn fw-bold px-4 rounded-pill">Submit</button>
-                </div>
-            </form>
-        </div>
-    </section>
-
-    <!-- footer  -->
-    <div id="footer"></div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- scripts for header and footer fetching  -->
-    <script>
-        // Function to load HTML content
-        function loadHTML(elementId, filePath, callback) {
-            fetch(filePath)
-                .then(response => response.text())
-                .then(data => {
-                    document.getElementById(elementId).innerHTML = data;
-                    if (callback) callback();
-                })
-                .catch(error => console.error('Error loading HTML:', error));
-        }
-
-        // Function to highlight active nav link
-        function setActiveNavLink() {
-            const path = window.location.pathname;
-            const page = path.split("/").pop(); // Get current file name
-
-            document.querySelectorAll('#header .nav-link').forEach(link => {
-                const href = link.getAttribute('href');
-                if (href && page === href) {
-                    link.classList.add('active', 'border-bottom', 'border-white', 'pb-1');
-                }
-            });
-        }
-
-        // Load header and footer, apply active link after header loads
-        loadHTML('header', 'header.html', setActiveNavLink);
-        loadHTML('footer', 'footer.html');
-    </script>
-
-    <!-- JavaScript to trigger the opacity and transform changes after the page loads. -->
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const sections = document.querySelectorAll("section");
-
-            const observer = new IntersectionObserver(entries => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("active");
-                    }
-                });
-            }, { threshold: 0.2 });
-
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });
-    </script>
-
-    <!-- script for back to top button  -->
-    <script>
-        const backToTopBtn = document.getElementById('backToTopBtn');
-
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 300) {
-                backToTopBtn.classList.remove('d-none');
-            } else {
-                backToTopBtn.classList.add('d-none');
-            }
-        });
-
-        backToTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        });
-    </script>
-
-</body>
-
+<!DOCTYPE html>
+
+<html lang="en">
+
+
+
+<head>
+
+    <!-- bootstrap meta and others  -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <link rel="stylesheet" href="style.css">
+
+
+
+
+
+    <!-- Basic Meta -->
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Home | Falcon Garment Industry</title>
+
+
+    <!-- Favicon -->
+
+    <link rel="icon" href="/assets/favicon.ico.png" type="image/x-icon">
+
+
+
+</head>
+
+
+
+<style>
+
+    .contact-card {
+
+        opacity: 0;
+
+        transform: translateY(100px);
+
+        transition: opacity 1s ease-out, transform 1s ease-out;
+
+        margin-top: 80px;
+
+    }
+
+
+
+    .active {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+
+
+    .map {
+
+        opacity: 0;
+
+        transform: translateX(-100px);
+
+        transition: opacity 1s ease-out, transform 1s ease-out;
+
+        margin-top: 80px;
+
+    }
+
+
+
+    .active {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+
+
+    .faqs {
+
+        opacity: 0;
+
+        transform: translateX(100px);
+
+        transition: opacity 1s ease-out, transform 1s ease-out;
+
+        margin-top: 80px;
+
+    }
+
+
+
+    .active {
+
+        opacity: 1;
+
+        transform: translateX(0);
+
+    }
+
+
+
+    .glass-card {
+
+        position: relative;
+
+        border-radius: 10px;
+
+        overflow: hidden;
+
+        box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+
+        height: 320px;
+
+    }
+
+
+
+    .glass-card img {
+
+        width: 100%;
+
+        height: 100%;
+
+        object-fit: cover;
+
+    }
+
+
+
+    .glass-info {
+
+        position: absolute;
+
+        bottom: 48px;
+
+        left: 0;
+
+        width: 100%;
+
+        padding: 15px;
+
+        background: rgba(255, 255, 255, 0.2);
+
+        backdrop-filter: blur(8px);
+
+        color: white;
+
+    }
+
+
+
+    .glass-info h3 {
+
+        font-size: 1.1rem;
+
+        font-weight: bold;
+
+        margin: 0 0 5px;
+
+    }
+
+
+
+    .glass-info p {
+
+        margin: 0;
+
+        font-size: 0.9rem;
+
+    }
+
+
+
+    .bottom-link {
+
+        position: absolute;
+
+        bottom: 0;
+
+        left: 0;
+
+        width: 100%;
+
+        background: white;
+
+        padding: 12px 15px;
+
+        font-weight: bold;
+
+        color: red;
+
+        font-size: 1rem;
+
+        display: flex;
+
+        justify-content: space-between;
+
+        align-items: center;
+
+        cursor: pointer;
+
+    }
+
+
+
+    .bottom-link span {
+
+        font-size: 1.2rem;
+
+    }
+
+
+
+
+
+
+
+
+
+    /* Make the accordion arrow white */
+
+    .accordion-button::after {
+
+        filter: brightness(0) invert(1);
+
+        /* turn icon white */
+
+        font-weight: 900;
+
+        transform: scale(1.4);
+
+    }
+
+
+
+    .accordion-button:not(.collapsed)::after {
+
+        filter: brightness(0) invert(1);
+
+        /* keep icon white when expanded */
+
+    }
+
+
+
+    .accordion-body {
+
+        border: 3px solid #cc2225 !important;
+
+        border-radius: 0 0 0.375rem 0.375rem;
+
+        color: #cc2225 !important;
+
+        font-size: 20px;
+
+    }
+
+</style>
+
+
+
+
+
+<body>
+
+
+
+    <!-- Back to Top Button -->
+
+    <button id="backToTopBtn" class="btn btn-danger position-fixed bottom-0 end-0 m-5 d-none">
+
+        ↑ Back To Top
+
+    </button>
+
+
+
+    <!-- header  -->
+
+    <div id="header"></div>
+
+
+
+    <div id="carouselExample" class="carousel slide">
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+
+                <img src="assets/contact_carousel.png" class="d-block w-100" alt="contact us carousel"
+
+                    style="border-bottom: 5px solid #cc2225;">
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- small card sectrion  -->
+
+    <section class="contact-card" style="margin-top: 60px;">
+
+        <div class="container">
+
+            <div class="row g-5 justify-content-center">
+
+
+
+                <!-- Card 1 -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="glass-card">
+
+                        <img src="assets/contact feature 1.png" alt="Hospitality Uniforms">
+
+                        <div class="glass-info">
+
+                            <h3>Hospitality Uniforms</h3>
+
+                            <p>Discover premium-quality garments designed for hotel and restaurant staff.</p>
+
+                        </div>
+
+                        <div class="bottom-link">
+
+                            Browse Hospitality Wear <span>→</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Card 2 -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="glass-card">
+
+                        <img src="assets/contact feature 2.png" alt="Corporate Orders">
+
+                        <div class="glass-info">
+
+                            <h3>Corporate Orders</h3>
+
+                            <p>Explore custom uniforms and tailored packages for your corporate workforce.</p>
+
+                        </div>
+
+                        <div class="bottom-link">
+
+                            View Corporate Solutions <span>→</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Card 3 -->
+
+                <div class="col-lg-4 col-md-6">
+
+                    <div class="glass-card">
+
+                        <img src="assets/contact feature 3.png" alt="School Uniforms">
+
+                        <div class="glass-info">
+
+                            <h3>School Uniforms</h3>
+
+                            <p>Comfortable and durable uniforms crafted for everyday school life.</p>
+
+                        </div>
+
+                        <div class="bottom-link">
+
+                            Shop School Collection <span>→</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- map section  -->
+
+    <section class="map" style="margin-top: 60px;">
+
+        <div class="container">
+
+            <div class="row">
+
+                <!-- Left Column -->
+
+                <div class="col-md-4">
+
+                    <!-- Media Enquiries Card -->
+
+                    <div class="card shadow-sm border-0 rounded-3 mb-4 bg-white">
+
+                        <div class="card-header bg-danger text-white fw-bold fs-5 py-2 rounded-top">
+
+                            Media enquiries
+
+                        </div>
+
+                        <div class="card-body">
+
+                            <p><i class="fas fa-clock text-danger me-2"></i><strong>Office Hours</strong><br />
+
+                                Monday–Friday 8:00 am - 6:00 pm<br />
+
+                                Saturday–Sunday 10:00 am - 3:00 pm
+
+                            </p>
+
+                            <p><i class="fas fa-phone-alt text-danger me-2"></i><strong>Call Hours</strong><br />
+
+                                6:00 am - 10:00 pm
+
+                            </p>
+
+                            <p><i class="fas fa-map-marker-alt text-danger me-2"></i><strong>Location</strong><br />
+
+                                Location is Kuwait.
+
+                            </p>
+
+                            <p><i class="fas fa-envelope text-danger me-2"></i><strong>Email</strong><br />
+
+                                SmartCare@gmail.com
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- Social Media Card -->
+
+                    <div class="card shadow-sm border-0 rounded-3 bg-white">
+
+                        <div class="card-header bg-danger text-white fw-bold fs-5 py-2 rounded-top">
+
+                            Social Media
+
+                        </div>
+
+                        <div class="card-body text-center">
+
+                            <a href="#" class="text-danger fs-4 mx-2"><i class="fab fa-facebook"></i></a>
+
+                            <a href="#" class="text-danger fs-4 mx-2"><svg xmlns="http://www.w3.org/2000/svg" width="21"
+
+                                    height="21" viewBox="0 0 16 16">
+
+                                    <path fill="#dc3545"
+
+                                        d="M9.294 6.928L14.357 1h-1.2L8.762 6.147L5.25 1H1.2l5.31 7.784L1.2 15h1.2l4.642-5.436L10.751 15h4.05zM7.651 8.852l-.538-.775L2.832 1.91h1.843l3.454 4.977l.538.775l4.491 6.47h-1.843z" />
+
+                                </svg></a>
+
+                            <a href="#" class="text-danger fs-4 mx-2"><i class="fab fa-instagram"></i></a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Right Column: Map -->
+
+                <div class="col-md-8 mt-4 mt-md-0">
+
+                    <div class="border border-4 border-danger rounded-3 overflow-hidden" style="height: 505px;">
+
+                        <iframe class="w-100 h-100 border-0"
+
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3486.8970041299294!2d48.08912097602857!3d29.07918836365654!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3fcf064285b01eff%3A0x542f37375674797c!2sSGS%20Kuwait%20W.L.L.!5e0!3m2!1sen!2sin!4v1749818322465!5m2!1sen!2sin"
+
+                            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- FAQs section  -->
+
+    <section class="faqs" style="margin-top: 60px;">
+
+        <div class="container my-5 py-3 px-2 px-md-5">
+
+            <!-- Header -->
+
+            <div class="text-center mb-4">
+
+                <div class="d-inline-block bg-white fw-bold fs-3 px-4 py-2 rounded-4 shadow" style="color: #cc2225;">
+
+                    FAQs
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Description -->
+
+            <p class="text-center mb-5 px-md-5" style="color: #cc2225;">
+
+                Falcon Garments is a leading uniform manufacturer based in Tirupur, India, specializing in custom-made
+
+                corporate, school, industrial, and hospitality uniforms. With advanced facilities and over 20 years of
+
+                experience, we deliver high-quality, bulk garment solutions tailored to your brand’s needs.
+
+            </p>
+
+
+
+            <!-- Accordion -->
+
+            <div class="accordion mx-auto" id="faqAccordion" style="max-width: 900px;">
+
+
+
+                <!-- FAQ 1 -->
+
+                <div class="accordion-item border-0 mb-2 shadow-sm rounded-3">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed text-white fw-semibold rounded-top"
+
+                            style="background-color: #cc2225; font-size: 20px;" type="button" data-bs-toggle="collapse"
+
+                            data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+
+                            What types of uniform garments does your company manufacture?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body rounded-bottom text-primary">
+
+                            We specialize in tailored uniforms including corporate wear (shirts, trousers, blazers),
+
+                            industrial/workwear, hospitality uniforms, school uniforms, and sportswear. We serve both
+
+                            woven
+
+                            and knitted garment needs.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 2 -->
+
+                <div class="accordion-item border-0 mb-2 shadow-sm rounded-3">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed text-white fw-semibold rounded-top"
+
+                            style="background-color: #cc2225; font-size: 20px;" type="button" data-bs-toggle="collapse"
+
+                            data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+
+                            Do you offer custom sizing and made-to-measure uniforms?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body rounded-bottom text-primary">
+
+                            Absolutely. Our team provides fully custom sizing services—customers can provide
+
+                            measurements,
+
+                            and our skilled tailors will craft garments to fit perfectly.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 3 -->
+
+                <div class="accordion-item border-0 mb-2 shadow-sm rounded-3">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed text-white fw-semibold rounded-top"
+
+                            style="background-color: #cc2225; font-size: 20px;" type="button" data-bs-toggle="collapse"
+
+                            data-bs-target="#faq3">
+
+                            What is your minimum order quantity (MOQ) for uniform production?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body rounded-bottom text-primary">
+
+                            We typically accept MOQs starting from 500 pieces per design/color. However, the MOQ may
+
+                            vary
+
+                            depending on fabric choice and complexity—reach out for a customized quote.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 4 -->
+
+                <div class="accordion-item border-0 mb-2 shadow-sm rounded-3">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed text-white fw-semibold rounded-top"
+
+                            style="background-color: #cc2225; font-size: 20px;" type="button" data-bs-toggle="collapse"
+
+                            data-bs-target="#faq4">
+
+                            What is your manufacturing capacity per month?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body rounded-bottom text-primary">
+
+                            Our production setup supports:
+
+                            <ul>
+
+                                <li>Up to 100,000 pieces per month for standard designs</li>
+
+                                <li>Scalable capacity for larger orders with advanced planning</li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 5 -->
+
+                <div class="accordion-item border-0 mb-2 shadow-sm rounded-3">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed text-white fw-semibold rounded-top"
+
+                            style="background-color: #cc2225; font-size: 20px;" type="button" data-bs-toggle="collapse"
+
+                            data-bs-target="#faq5">
+
+                            Where are your manufacturing facilities located?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body rounded-bottom text-primary">
+
+                            We operate from Tirupur, Southern India, managing three production units equipped with 200+
+
+                            sewing machines and a team of experienced professionals .
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FAQ 6 -->
+
+                <div class="accordion-item border-0 mb-2 shadow-sm rounded-3">
+
+                    <h2 class="accordion-header">
+
+                        <button class="accordion-button collapsed text-white fw-semibold rounded-top"
+
+                            style="background-color: #cc2225; font-size: 20px;" type="button" data-bs-toggle="collapse"
+
+                            data-bs-target="#faq6">
+
+                            What fabrics and materials can you source?
+
+                        </button>
+
+                    </h2>
+
+                    <div id="faq6" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+
+                        <div class="accordion-body rounded-bottom text-primary">
+
+                            We source both knitted and woven fabrics from South‑East Asia and produce in-house. We
+
+                            handle a
+
+                            wide variety: cotton, poly‑cotton blends, technical fabrics, and specialized performance
+
+                            textiles.
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- form section  -->
+
+    <section class="form-section my-5" style="background-color: white;">
+
+        <div class="container py-5 d-flex justify-content-center">
+
+            <form class="p-4 rounded shadow" style="background-color: #f2f2ec; max-width: 900px; width: 100%;">
+
+                <div class="row g-3 mb-2">
+
+                    <div class="col-md-6">
+
+                        <input type="text" class="form-control rounded" placeholder="Full Name" required>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <input type="text" class="form-control rounded" placeholder="Company" required>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="row g-3 mb-2">
+
+                    <div class="col-md-6">
+
+                        <input type="email" class="form-control rounded" placeholder="Email" required>
+
+                    </div>
+
+                    <div class="col-md-6">
+
+                        <input type="tel" class="form-control rounded" placeholder="Mobile No." required>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="mb-2">
+
+                    <select class="form-select rounded" required>
+
+                        <option selected disabled>Products</option>
+
+                        <option value="1">Business Suit</option>
+
+                        <option value="2">Doctor Coat</option>
+
+                        <option value="3">School Uniform</option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="mb-2">
+
+                    <input type="number" class="form-control rounded" placeholder="Order Quantity" required>
+
+                </div>
+
+
+
+                <div class="mb-3">
+
+                    <textarea class="form-control" placeholder="Your Message" rows="4"
+
+                        style="border-radius: 12px;"></textarea>
+
+                </div>
+
+
+
+                <div class="text-start">
+
+                    <button type="submit" class="btn-cmn fw-bold px-4 rounded-pill">Submit</button>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- footer  -->
+
+    <div id="footer"></div>
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+
+
+    <!-- scripts for header and footer fetching  -->
+
+    <script>
+
+        // Function to load HTML content
+
+        function loadHTML(elementId, filePath, callback) {
+
+            fetch(filePath)
+
+                .then(response => response.text())
+
+                .then(data => {
+
+                    document.getElementById(elementId).innerHTML = data;
+
+                    if (callback) callback();
+
+                })
+
+                .catch(error => console.error('Error loading HTML:', error));
+
+        }
+
+
+
+        // Function to highlight active nav link
+
+        function setActiveNavLink() {
+
+            const path = window.location.pathname;
+
+            const page = path.split("/").pop(); // Get current file name
+
+
+
+            document.querySelectorAll('#header .nav-link').forEach(link => {
+
+                const href = link.getAttribute('href');
+
+                if (href && page === href) {
+
+                    link.classList.add('active', 'border-bottom', 'border-white', 'pb-1');
+
+                }
+
+            });
+
+        }
+
+
+
+        // Load header and footer, apply active link after header loads
+
+        loadHTML('header', 'header.html', setActiveNavLink);
+
+        loadHTML('footer', 'footer.html');
+
+    </script>
+
+
+
+    <!-- JavaScript to trigger the opacity and transform changes after the page loads. -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const sections = document.querySelectorAll("section");
+
+
+
+            const observer = new IntersectionObserver(entries => {
+
+                entries.forEach(entry => {
+
+                    if (entry.isIntersecting) {
+
+                        entry.target.classList.add("active");
+
+                    }
+
+                });
+
+            }, { threshold: 0.2 });
+
+
+
+            sections.forEach(section => {
+
+                observer.observe(section);
+
+            });
+
+        });
+
+    </script>
+
+
+
+    <!-- script for back to top button  -->
+
+    <script>
+
+        const backToTopBtn = document.getElementById('backToTopBtn');
+
+
+
+        window.addEventListener('scroll', () => {
+
+            if (window.scrollY > 300) {
+
+                backToTopBtn.classList.remove('d-none');
+
+            } else {
+
+                backToTopBtn.classList.add('d-none');
+
+            }
+
+        });
+
+
+
+        backToTopBtn.addEventListener('click', () => {
+
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+
+        });
+
+    </script>
+
+
+
+</body>
+
+
+
+
 </html>
